@@ -46,7 +46,7 @@ public class RestClient {
         }
 
         courseList.forEach(System.out::println);
-        System.out.println("time " + (System.currentTimeMillis() - s));
+        System.out.println("time " + (System.currentTimeMillis() - s)+"ms");
         System.exit(0);
     }
 
@@ -78,7 +78,7 @@ public class RestClient {
                 .collect(Collectors.toList());
     }
 
-    public static JsonService getJsonService() {
+    private static JsonService getJsonService() {
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
