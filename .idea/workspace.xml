@@ -2,16 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f4a9327-ae3d-4369-9bb5-a2e1f521941f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/RestClient.class" afterPath="$PROJECT_DIR$/out/production/classes/RestClient.class" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/RestClientTest.class" afterPath="$PROJECT_DIR$/out/test/classes/RestClientTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/test/resources/results" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RestClient.java" afterPath="$PROJECT_DIR$/src/main/java/RestClient.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/RestClientTest.java" afterPath="$PROJECT_DIR$/src/test/java/RestClientTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/results" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/JsonService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/RestClient$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/RestClient.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/Actions.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/Course.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/Example.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/Meta.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/RestClientTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/RestClientTest.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/resources/test/results" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-RestClientTest.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -79,8 +90,8 @@
       <file leaf-file-name="RestClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/RestClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="41" column="53" lean-forward="true" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
+            <state relative-caret-position="221">
+              <caret line="52" column="33" lean-forward="true" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1058,7 +1069,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.RestClient">
+  <component name="RunManager" selected="Gradle.CheckIOTask [clean]">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -1274,7 +1285,7 @@
       <option name="presentableId" value="Default" />
       <updated>1524258776638</updated>
       <workItem from="1524258782348" duration="1733000" />
-      <workItem from="1524261106827" duration="29597000" />
+      <workItem from="1524261106827" duration="29769000" />
     </task>
     <servers />
   </component>
@@ -1311,7 +1322,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31330000" />
+    <option name="totallyTimeSpent" value="31502000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1339,7 +1350,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928476" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21465296" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38753214" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38753214" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2276,8 +2287,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/RestClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="41" column="53" lean-forward="true" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
+        <state relative-caret-position="221">
+          <caret line="52" column="33" lean-forward="true" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
