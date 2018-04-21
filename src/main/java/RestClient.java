@@ -25,19 +25,11 @@ public class RestClient {
         input();
 
         long s = System.currentTimeMillis();
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(baseUrl)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build();
 
-        JsonService service = retrofit.create(JsonService.class);
         final boolean[] flag = {true};
         for (int i = 1; flag[0]; i++) {
             final Example[] example = new Example[1];
-            service.getListCourses(i).enqueue(new Callback<Example>() {
+            getJsonService().getListCourses(i).enqueue(new Callback<Example>() {
                 @Override
                 public void onResponse(Call<Example> call, Response<Example> response) {
                     example[0] = response.body();
@@ -84,6 +76,19 @@ public class RestClient {
                 .sorted(Comparator.comparing(course -> -course.getLearnersCount()))
                 .limit(N)
                 .collect(Collectors.toList());
+    }
+
+    public static JsonService getJsonService()
+    {
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(baseUrl)
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build();
+
+        return retrofit.create(JsonService.class);
     }
 
 }
