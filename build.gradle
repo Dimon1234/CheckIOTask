@@ -2,13 +2,23 @@ group 'com.dimon1234'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
-apply plagin: 'application'
-mainClassName = 'RestClient'
+
 
 sourceCompatibility = 1.8
 jar {
     baseName = 'CheckIO'
     version = '1.0'
+    manifest.attributes("Main-Class": "RestClient")
+    manifest.attributes("Class-Path": '.')
+
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+        configurations.runtime.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
 }
 repositories {
     mavenCentral()
@@ -20,4 +30,7 @@ dependencies {
     compile group: 'com.google.code.gson', name: 'gson', version: '1.7.2'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 
+}
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.0'
 }

@@ -2,7 +2,7 @@ import model.Example;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.IOException;
+import java.io.*;
 
 public class RestClientTest {
 
@@ -13,5 +13,6 @@ public class RestClientTest {
         Example example = service.getListCourses(1).execute().body();
         Assert.assertEquals(5,example.getCourses().size());
     }
+
 
 }

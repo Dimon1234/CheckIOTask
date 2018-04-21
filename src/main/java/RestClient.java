@@ -21,15 +21,15 @@ public class RestClient {
     private static volatile List<Course> courseList = new ArrayList<>();
     private static int N;
 
-    public static void main(String[] args) {
+    public static void main(String... args) {
         input();
-
+        JsonService service = getJsonService();
         long s = System.currentTimeMillis();
 
         final boolean[] flag = {true};
         for (int i = 1; flag[0]; i++) {
             final Example[] example = new Example[1];
-            getJsonService().getListCourses(i).enqueue(new Callback<Example>() {
+            service.getListCourses(i).enqueue(new Callback<Example>() {
                 @Override
                 public void onResponse(Call<Example> call, Response<Example> response) {
                     example[0] = response.body();
@@ -46,7 +46,7 @@ public class RestClient {
         }
 
         courseList.forEach(System.out::println);
-        System.out.println("time " +(System.currentTimeMillis() - s));
+        System.out.println("time " + (System.currentTimeMillis() - s));
         System.exit(0);
     }
 
@@ -78,8 +78,7 @@ public class RestClient {
                 .collect(Collectors.toList());
     }
 
-    public static JsonService getJsonService()
-    {
+    public static JsonService getJsonService() {
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -87,7 +86,6 @@ public class RestClient {
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
-
         return retrofit.create(JsonService.class);
     }
 
