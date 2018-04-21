@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CheckIOTask.iml" filepath="$PROJECT_DIR$/.idea/modules/CheckIOTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CheckIOTask_main.iml" filepath="$PROJECT_DIR$/.idea/modules/CheckIOTask_main.iml" group="CheckIOTask" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CheckIOTask_test.iml" filepath="$PROJECT_DIR$/.idea/modules/CheckIOTask_test.iml" group="CheckIOTask" />
+    </modules>
+  </component>
+</project>
