@@ -47,7 +47,8 @@ public class RestClient {
 
                 @Override
                 public void onFailure(Call<Example> call, Throwable t) {
-
+                    System.err.println(t.toString());
+                    System.exit(1);
                 }
             });
         }
@@ -72,7 +73,7 @@ public class RestClient {
 
     }
 
-    private static void addListCoursesToCourseList(List<Course> list) {
+    private static synchronized void addListCoursesToCourseList(List<Course> list) {
         courseList.addAll(list);
         courseList = sortingStream(courseList);
 
