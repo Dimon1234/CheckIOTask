@@ -2,6 +2,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import model.Course;
 import model.Example;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -15,12 +18,13 @@ import java.util.stream.Collectors;
 
 public class RestClient {
     private static String baseUrl = "https://stepik.org/";
-    private static List<Course> courseList = new ArrayList<>();
+    private static volatile List<Course> courseList = new ArrayList<>();
     private static int N;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         input();
 
+        long s = System.currentTimeMillis();
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -30,23 +34,27 @@ public class RestClient {
                 .build();
 
         JsonService service = retrofit.create(JsonService.class);
+        final boolean[] flag = {true};
+        for (int i = 1; flag[0]; i++) {
+            final Example[] example = new Example[1];
+            service.getListCourses(i).enqueue(new Callback<Example>() {
+                @Override
+                public void onResponse(Call<Example> call, Response<Example> response) {
+                    example[0] = response.body();
+                    if (example[0] == null) flag[0] = false;
+                    else addListCoursesToCourseList(sortingStream(example[0].getCourses()));
+                }
 
-        for (int i = 1; ; i++) {
-            Example example = service.getListCourses(i).execute().body();
+                @Override
+                public void onFailure(Call<Example> call, Throwable t) {
 
-            courseList.addAll(example.getCourses());
-            courseList.sort(Comparator.comparing(course -> -course.getLearnersCount()));
-            courseList = courseList.stream().limit(N).collect(Collectors.toList());
-
-            if (!example.getMeta().getHasNext()) break;
+                }
+            });
         }
 
-        courseList.stream().forEach(course ->
-                System.out.println("\nназвание курса: " + course.getTitle() +
-                        "\nколичество: " + course.getLearnersCount() +
-                        "\nссылка: "+baseUrl+"/course/" +
-                        course.getId())
-        );
+        courseList.forEach(System.out::println);
+        System.out.println("time " +(System.currentTimeMillis() - s));
+        System.exit(0);
     }
 
     private static void input() {
@@ -62,6 +70,19 @@ public class RestClient {
             }
         }
 
+    }
+
+    private static void addListCoursesToCourseList(List<Course> list) {
+        courseList.addAll(list);
+        courseList = sortingStream(courseList);
+
+    }
+
+    private static List<Course> sortingStream(List<Course> list) {
+        return list.stream()
+                .sorted(Comparator.comparing(course -> -course.getLearnersCount()))
+                .limit(N)
+                .collect(Collectors.toList());
     }
 
 }

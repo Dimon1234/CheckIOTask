@@ -8,6 +8,8 @@ import java.util.List;
 
 public class Course {
 
+    private static String baseUrl = "https://stepik.org/";
+
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -931,6 +933,15 @@ public class Course {
 
     public void setLtiSecretKey(String ltiSecretKey) {
         this.ltiSecretKey = ltiSecretKey;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "\nназвание курса: " + getTitle() +
+                "\nколичество учащихся: " + getLearnersCount() +
+                "\nссылка: " + baseUrl + "/course/" +
+                getId();
     }
 
 }
